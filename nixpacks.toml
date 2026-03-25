@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["...", "maven"]
+
+[phases.build]
+cmds = ["mvn clean package -DskipTests"]
+
+[start]
+cmd = "java -Dserver.port=$PORT $JAVA_OPTS -jar target/omnicare-backend-0.0.1-SNAPSHOT.jar"
